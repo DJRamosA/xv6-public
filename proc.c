@@ -367,7 +367,7 @@ scheduler(void)
       if (tickets_passed < winner){
         continue;
       }
-      cprintf("tickets are : %d ,  rand no is %ld\n",p->num_tickets , winner);
+      //cprintf("tickets are : %d ,  rand no is %d\n",p->num_tickets , winner);
       // Switch to chosen process.  It is the process's job
       // to release ptable.lock and then reacquire it
       // before jumping back to us.
