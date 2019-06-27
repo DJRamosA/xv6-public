@@ -17,11 +17,11 @@ forktest(void)
 
   for(n=0; n<N; n++){
     pid = fork();
-    printf(1, "Create a new fork with pid %d\n", pid);
     if(pid < 0)
       break;
-    if(pid == 0)
-      exit();
+    if(pid == 0) 
+        printf(1, "Create a new fork with id %d\n", n);
+    
   }
 
   if(n == N){
