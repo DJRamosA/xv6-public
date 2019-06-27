@@ -22,6 +22,7 @@ forktest(void)
 
   for(n=0; n<N; n++){
     pid = fork();
+    printf(1, "Create a new fork");
     if(pid < 0)
       break;
     if(pid == 0)
@@ -29,7 +30,7 @@ forktest(void)
   }
 
   if(n == N){
-    printf(1, "fork claimed to work N times!\n", N);
+    printf(1, "fork claimed to work %d times!\n", N);
     exit();
   }
 
