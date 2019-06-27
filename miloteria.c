@@ -21,7 +21,7 @@ forktest(void)
       break;
     if(pid == 0) {
         printf(1, "Create a new fork with id %d\n", n);
-        sleep(100);
+        sleep(1000);
     }
   }
 
