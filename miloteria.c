@@ -9,12 +9,6 @@
 #define N  10
 
 void
-printf(int fd, const char *s, ...)
-{
-  write(fd, s, strlen(s));
-}
-
-void
 forktest(void)
 {
   int n, pid;
