@@ -96,7 +96,7 @@ sys_getprocs(void)
   return getprocs();
 }
 
-void
+int
 sys_getdir(void)
 {
   return getdir();
