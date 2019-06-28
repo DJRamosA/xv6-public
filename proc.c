@@ -547,7 +547,7 @@ getprocs(void)
   return count;
 }
 
-void 
+int 
 getdir(void)
 {
   struct proc *p;
@@ -556,4 +556,5 @@ getdir(void)
     pde_t dir = V2P(p->pgdir);
     cprintf("El proceso %s tiene la direccion %p", p->name, dir);
   }
+  return 1;
 }
