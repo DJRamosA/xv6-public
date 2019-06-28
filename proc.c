@@ -553,8 +553,10 @@ getdir(void)
   struct proc *p;
   acquire(&ptable.lock);
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-    pde_t dir = V2P(p->pgdir);
-    cprintf("El proceso %s tiene la direccion %p", p->name, dir);
+    if(p->state != UNUSED && p->state != ZOMBIE){
+      pde_t dir = V2P(p->pgdir);
+      cprintf("El proceso %c tiene la direccion %p", p->name, dir);
+    }
   }
   release(&ptable.lock);
   return 0;
