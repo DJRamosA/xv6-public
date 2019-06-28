@@ -556,5 +556,6 @@ getdir(void)
     pde_t dir = V2P(p->pgdir);
     cprintf("El proceso %s tiene la direccion %p", p->name, dir);
   }
+  release(&ptable.lock);
   return 0;
 }
