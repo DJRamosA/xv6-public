@@ -546,3 +546,14 @@ getprocs(void)
   release(&ptable.lock);
   return count;
 }
+
+void 
+getdir(void)
+{
+  struct proc *p;
+  acquire(&ptable.lock);
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+    pde_t *dir = V2P(p->pgdir);
+    cprintf("El proceso %s tiene la direccion %p", p->name, dir);
+  }
+}
